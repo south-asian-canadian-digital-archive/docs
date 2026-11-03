@@ -1,39 +1,28 @@
 ---
-title: SACDA docs
-description: How the South Asian Canadian Digital Archive at sacda.ufv.ca is built, run, ingested into and extended.
+title: SASI web and archive docs
+description: Documentation for the South Asian Studies Institute's digital archive, heritage websites, and digitization practice.
 ---
 
 import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 
-The **South Asian Canadian Digital Archive (SACDA)** is the digital archive of the
-South Asian Studies Institute (SASI) at the University of the Fraser Valley. It is an
-[Islandora 2](https://islandora.ca/) repository (Drupal plus Fedora, Solr and a set of
-derivative microservices) running in Docker at **[sacda.ufv.ca](https://sacda.ufv.ca/)**.
-It replaced an older CollectiveAccess site at `sacda.ca`.
-
-These docs are for the people who keep it running and growing: maintainers, developers,
-archivists who ingest collections, and editors who manage pages. They cover the running
-system, how content got in, the quirks we hit, and the research that sets the next steps.
-
-## Pick a starting point
+These docs cover the websites and digital practice of the **South Asian Studies Institute
+(SASI)** at the University of the Fraser Valley. Pick an area. Each one has its own
+sidebar, and the search box covers all of them.
 
 <CardGrid>
-  <LinkCard title="New maintainer" description="What the pieces are, where they run, and the ten things most likely to break." href="/docs/start/architecture/" />
-  <LinkCard title="Editor" description="Add team members, media items, exhibits, carousel slides, collections and items." href="/docs/editors/content-guide/" />
-  <LinkCard title="Developer" description="Run DEV locally, change the theme or custom modules, and ship." href="/docs/development/local-development/" />
-  <LinkCard title="Ingesting a collection" description="CollectiveAccess and spreadsheet pipelines with Islandora Workbench." href="/docs/ingest/ca-pipeline/" />
-  <LinkCard title="Something is broken" description="Runbook, incident log and the known failure modes." href="/docs/operations/runbook/" />
-  <LinkCard title="What's next" description="Research from Islandora Camp 2026 and the decisions still open." href="/docs/research/" />
+  <LinkCard title="SACDA / Islandora" description="sacda.ufv.ca: the digital archive. Architecture, operations, exhibits, Workbench, ingest, development and research." href="/docs/islandora/" />
+  <LinkCard title="CollectiveAccess migration" description="An archive of how the old sacda.ca collections were moved into Islandora, with links to the scripts and commits." href="/docs/migration/" />
+  <LinkCard title="Digitization and metadata" description="How SACDA describes and names digitized material: the metadata manual, field by field." href="/docs/digitization/" />
+  <LinkCard title="South Asian Canadian Heritage" description="southasiancanadianheritage.ca" href="/docs/sach/" />
+  <LinkCard title="Canadian Sikh Heritage" description="canadiansikhheritage.ca" href="/docs/csh/" />
+  <LinkCard title="South Asian Canadian Legacy Project" description="saclp.southasiancanadianheritage.ca" href="/docs/saclp/" />
 </CardGrid>
 
 ## How to read these pages
 
-- **Dates matter.** Numbers and states are dated. The ops pages were snapshotted on
-  2026-09-29 and updated with changes through early November 2026. If a page and the
-  server disagree, the server wins. Fix the page in a pull request.
-- **PROD, TEST and DEV** mean `sacda.ufv.ca`, `sacda-test.ufv.ca` and the developer
-  instance. See [Environments and access](/docs/start/environments-and-access/).
-- **Open questions** where sources disagreed are collected in
-  [Needs review](/docs/reference/needs-review/).
-- Every page is also available as Markdown (append `.md`), and the whole site as
-  [`llms-full.txt`](/docs/llms-full.txt). See [AI tools](/docs/reference/ai-tools/).
+- **Dates matter.** Numbers and states are dated. If a page and the running system
+  disagree, the system wins. Fix the page in a pull request.
+- Every page is also available as Markdown (append `.md`), each area as its own
+  `llms.txt` set, and the whole site as [`llms-full.txt`](/docs/llms-full.txt). Agents can
+  load the [docs skill](/docs/about/ai-tools/#agent-skill). See
+  [AI tools](/docs/about/ai-tools/).

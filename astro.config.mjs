@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightLlmsTxt from 'starlight-llms-txt';
 import starlightMdTxt from 'starlight-md-txt';
+import starlightSidebarTopics from 'starlight-sidebar-topics';
 
 // Static output for GitHub Pages, served as a project site under /docs.
 // Only src/content/docs is published. Internal links in Markdown are written as
@@ -14,7 +15,7 @@ export default defineConfig({
   trailingSlash: 'ignore',
   integrations: [
     starlight({
-      title: 'SACDA docs',
+      title: 'SASI docs',
       description:
         'How the South Asian Canadian Digital Archive (sacda.ufv.ca) is built, run, ingested into and extended.',
       customCss: ['./src/styles/sacda-docs.css'],
@@ -39,15 +40,6 @@ export default defineConfig({
       routeMiddleware: './src/docsRouteData.ts',
       editLink: { baseUrl: `${REPO}/edit/main/` },
       lastUpdated: true,
-      sidebar: [
-        { label: 'Start here', items: [{ autogenerate: { directory: 'start' } }] },
-        { label: 'Editing content', items: [{ autogenerate: { directory: 'editors' } }] },
-        { label: 'Operations', items: [{ autogenerate: { directory: 'operations' } }] },
-        { label: 'Development', items: [{ autogenerate: { directory: 'development' } }] },
-        { label: 'Ingest', items: [{ autogenerate: { directory: 'ingest' } }] },
-        { label: 'Research and roadmap', items: [{ autogenerate: { directory: 'research' } }] },
-        { label: 'Reference', items: [{ autogenerate: { directory: 'reference' } }] },
-      ],
       expressiveCode: {
         themes: [
           {
@@ -74,10 +66,43 @@ export default defineConfig({
         },
       },
       plugins: [
+        starlightSidebarTopics(
+          [
+            {
+              label: 'SACDA / Islandora',
+              link: '/islandora/',
+              icon: 'open-book',
+              items: [
+              { label: 'Start here', items: ['islandora', { autogenerate: { directory: 'islandora/start' } }] },
+              { label: 'Editing content', items: [{ autogenerate: { directory: 'islandora/editors' } }] },
+              { label: 'Operations', items: [{ autogenerate: { directory: 'islandora/operations' } }] },
+              { label: 'Exhibits', items: [{ autogenerate: { directory: 'islandora/exhibits' } }] },
+              { label: 'Workbench', items: [{ autogenerate: { directory: 'islandora/workbench' } }] },
+              { label: 'Ingest', items: [{ autogenerate: { directory: 'islandora/ingest' } }] },
+              { label: 'Development', items: [{ autogenerate: { directory: 'islandora/development' } }] },
+              { label: 'Research and roadmap', items: [{ autogenerate: { directory: 'islandora/research' } }] },
+              { label: 'Reference', items: [{ autogenerate: { directory: 'islandora/reference' } }] },
+              ],
+            },
+            { label: 'CollectiveAccess migration', link: '/migration/', icon: 'random', items: [{ autogenerate: { directory: 'migration' } }] },
+            { label: 'Digitization and metadata', link: '/digitization/', icon: 'document', items: [{ autogenerate: { directory: 'digitization' } }] },
+            { label: 'South Asian Canadian Heritage', link: '/sach/', icon: 'external', items: [{ autogenerate: { directory: 'sach' } }] },
+            { label: 'Canadian Sikh Heritage', link: '/csh/', icon: 'external', items: [{ autogenerate: { directory: 'csh' } }] },
+            { label: 'SACLP', link: '/saclp/', icon: 'external', items: [{ autogenerate: { directory: 'saclp' } }] },
+            { label: 'About these docs', link: '/about/', icon: 'information', items: [{ autogenerate: { directory: 'about' } }] },
+          ],
+          { exclude: ['/'] },
+        ),
         starlightLlmsTxt({
-          projectName: 'SACDA docs',
+          projectName: 'SASI docs',
           description:
-            'Operator, developer and editor documentation for the South Asian Canadian Digital Archive, an Islandora 2 (Drupal) repository at sacda.ufv.ca.',
+            'Documentation for the South Asian Studies Institute (UFV): the SACDA Islandora archive at sacda.ufv.ca, its exhibits and ingest tooling, the CollectiveAccess migration, metadata practice, and the heritage websites.',
+          customSets: [
+            { label: 'SACDA / Islandora', paths: ['islandora/**', 'islandora'], description: 'sacda.ufv.ca: architecture, operations, exhibits, Workbench, ingest, development and research' },
+            { label: 'CollectiveAccess migration', paths: ['migration/**', 'migration'], description: 'archive of the 2026 move from CollectiveAccess to Islandora' },
+            { label: 'Digitization and metadata', paths: ['digitization/**', 'digitization'], description: 'the SACDA metadata manual and digitization practice' },
+            { label: 'Heritage websites', paths: ['sach/**', 'sach', 'csh/**', 'csh', 'saclp/**', 'saclp'], description: 'southasiancanadianheritage.ca, canadiansikhheritage.ca and saclp' },
+          ],
         }),
         starlightMdTxt(),
       ],
