@@ -10,7 +10,7 @@ sidebar:
 ```bash
 git clone --recurse-submodules git@github.com:south-asian-canadian-digital-archive/isle.git
 cd isle
-cp sample.env .env          # then set DOMAIN, TAG and anything else you need
+cp sample.env .env          # then set DOMAIN (and ISLANDORA_TAG if not the default)
 ln -s docker-compose.dev.yml docker-compose.override.yml
 make up
 ```

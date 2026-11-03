@@ -31,7 +31,7 @@ The only DB dump is a hand-made one from 2026-06-24, stale and on the same disk.
 | Config | git | – | Yes |
 | Exhibits | `/data/exhibits` | ~700 MB | Yes, `deploy-exhibits.sh` |
 
-The original source media is on the SASI `F:` drive (see [Ingest CA Pipeline](/docs/ingest/ca-pipeline/)) and possibly on the legacy CA server, so some of it could be re-ingested. Metadata edits made in Drupal since ingest could not.
+The original source media is on the SASI shared drive (see [Ingest CA Pipeline](/docs/ingest/ca-pipeline/)) and possibly on the legacy CA server, so some of it could be re-ingested. Metadata edits made in Drupal since ingest could not.
 
 ## Orphaned `isle-sacda-prod_*` volumes
 

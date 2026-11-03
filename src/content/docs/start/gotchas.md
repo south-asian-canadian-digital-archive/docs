@@ -5,6 +5,9 @@ sidebar:
   order: 3
 ---
 
+Roughly in order of how often they have bitten.
+
+
 1. **Editing config in the Drupal UI.** Every deploy runs `drush cim -y`, so anything
    not exported to git is silently reverted. → [Config management](/docs/operations/config-management/)
 2. **Hand-editing tracked files on the server.** `deploy-auto` refuses a dirty tree, and
