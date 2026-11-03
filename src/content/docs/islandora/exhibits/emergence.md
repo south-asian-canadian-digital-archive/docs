@@ -1,6 +1,7 @@
 ---
 title: "Emergence: Out of the Shadows"
 description: "The Emergence film exhibit at /exhibits/emergence."
+tags: [svelte, sveltekit, tailwind]
 sidebar:
   order: 6
 ---

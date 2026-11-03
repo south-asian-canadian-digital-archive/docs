@@ -1,6 +1,7 @@
 ---
 title: Architecture
 description: The services, the request path, what lives where, and how the pieces connect.
+tags: [docker, islandora, drupal, java, solr, fedora]
 sidebar:
   order: 1
 ---

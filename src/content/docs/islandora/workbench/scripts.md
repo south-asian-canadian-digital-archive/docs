@@ -1,6 +1,7 @@
 ---
 title: Scripts
 description: Reusable scripts in isle and islandora-workbench-ops that are useful beyond the migration, with links to their source.
+tags: [python]
 sidebar:
   order: 2
 ---

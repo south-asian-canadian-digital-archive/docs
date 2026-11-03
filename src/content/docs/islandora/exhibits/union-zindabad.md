@@ -1,6 +1,7 @@
 ---
 title: "Union Zindabad!"
 description: "The South Asian Canadian labour history exhibit at /exhibits/union-zindabad."
+tags: [svelte, sveltekit, typescript, tailwind]
 sidebar:
   order: 3
 ---

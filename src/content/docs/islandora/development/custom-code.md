@@ -1,6 +1,7 @@
 ---
 title: Custom code
 description: The theme and custom modules, how they ship, and what each one does.
+tags: [drupal, php, svelte, bun, github-actions]
 sidebar:
   order: 3
 ---

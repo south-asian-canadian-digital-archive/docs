@@ -1,6 +1,7 @@
 ---
 title: Viewers
 description: How item viewers are chosen on this site, which is not the stock Islandora way, and the traps when editing them.
+tags: [drupal, iiif, twig]
 sidebar:
   order: 4
 ---

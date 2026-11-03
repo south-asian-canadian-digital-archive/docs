@@ -1,6 +1,7 @@
 ---
 title: "South Asian Canadian Muslims in BC"
 description: "The SACMBC exhibit at /exhibits/sacmbc."
+tags: [svelte, sveltekit, typescript, tailwind]
 sidebar:
   order: 5
 ---

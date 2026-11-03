@@ -1,6 +1,7 @@
 ---
 title: AI tools and agent skill
 description: Search these docs, read them as Markdown or llms.txt, or give an AI agent the docs skill.
+tags: [astro]
 sidebar:
   order: 1
 ---

@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import mermaid from 'astro-mermaid';
 import starlightLlmsTxt from 'starlight-llms-txt';
 import starlightMdTxt from 'starlight-md-txt';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
@@ -14,6 +15,10 @@ export default defineConfig({
   base: '/docs',
   trailingSlash: 'ignore',
   integrations: [
+    // Must come before Starlight so ```mermaid blocks skip Expressive Code.
+    // Diagrams render in the browser; the .md and llms.txt copies keep the
+    // Mermaid source, which agents can read.
+    mermaid({ theme: 'neutral', autoTheme: true }),
     starlight({
       title: 'SASI docs',
       description:
@@ -89,9 +94,15 @@ export default defineConfig({
             { label: 'South Asian Canadian Heritage', link: '/sach/', icon: 'external', items: [{ autogenerate: { directory: 'sach' } }] },
             { label: 'Canadian Sikh Heritage', link: '/csh/', icon: 'external', items: [{ autogenerate: { directory: 'csh' } }] },
             { label: 'SACLP', link: '/saclp/', icon: 'external', items: [{ autogenerate: { directory: 'saclp' } }] },
-            { label: 'About these docs', link: '/about/', icon: 'information', items: [{ autogenerate: { directory: 'about' } }] },
+            {
+              id: 'about',
+              label: 'About these docs',
+              link: '/about/',
+              icon: 'information',
+              items: [{ autogenerate: { directory: 'about' } }, { label: 'Tags', link: '/tags/' }],
+            },
           ],
-          { exclude: ['/'] },
+          { exclude: ['/'], topics: { about: ['/tags', '/tags/**'] } },
         ),
         starlightLlmsTxt({
           projectName: 'SASI docs',

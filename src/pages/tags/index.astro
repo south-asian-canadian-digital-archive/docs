@@ -1,0 +1,17 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { pagesByTag, tagLabel, TAGS } from '../../tags';
+
+const map = await pagesByTag();
+const tags = [...map.keys()].sort((a, b) => tagLabel(a).localeCompare(tagLabel(b)));
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<StarlightPage frontmatter={{ title: 'Tags', description: 'Find pages by the tool or language they cover.' }}>
+  <p>Find pages by the tool or language they are about, for example everything built with Svelte. See also <a href={`${base}/about/tools/`}>Tools and languages</a>.</p>
+  <ul class="tag-index">
+    {tags.map((t) => (
+      <li><a class="doc-tag" href={`${base}/tags/${t}/`}>{tagLabel(t)} <span>{map.get(t)!.length}</span></a> {TAGS[t]?.about}</li>
+    ))}
+  </ul>
+</StarlightPage>

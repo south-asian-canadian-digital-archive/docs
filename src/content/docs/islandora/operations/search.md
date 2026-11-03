@@ -1,6 +1,7 @@
 ---
 title: Search
 description: How /search works since October 2026, why it was rebuilt, and how to operate it.
+tags: [solr, svelte, drupal]
 sidebar:
   order: 6
 ---

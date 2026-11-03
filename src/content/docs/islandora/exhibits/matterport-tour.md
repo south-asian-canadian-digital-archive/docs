@@ -1,6 +1,7 @@
 ---
 title: Matterport tour
 description: The archived CSHM virtual tour at /cshm-tour/, a separate Compose project behind the same Traefik.
+tags: [python, traefik]
 sidebar:
   order: 11
 ---

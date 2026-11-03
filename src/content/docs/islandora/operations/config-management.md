@@ -1,6 +1,7 @@
 ---
 title: Config management
 description: config/sync, drush cim on every deploy, and what config does not carry.
+tags: [drupal]
 sidebar:
   order: 2
 ---

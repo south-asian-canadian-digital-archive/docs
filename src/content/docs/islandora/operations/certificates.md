@@ -1,6 +1,7 @@
 ---
 title: Certificates
 description: The two TLS layers, the hairpin, and the only correct way to regenerate the internal certificate.
+tags: [networking, traefik, security]
 sidebar:
   order: 8
 ---

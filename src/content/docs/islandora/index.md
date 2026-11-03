@@ -14,7 +14,7 @@ the [migration archive](/docs/migration/).
 
 | If you are… | Start with |
 |---|---|
-| A new maintainer | [Architecture](/docs/islandora/start/architecture/), then [Gotchas](/docs/islandora/start/gotchas/) |
+| A new maintainer | [How it works (diagrams)](/docs/islandora/start/how-it-works/), [Architecture](/docs/islandora/start/architecture/), then [Gotchas](/docs/islandora/start/gotchas/) |
 | An editor | [Content guide](/docs/islandora/editors/content-guide/) |
 | Fixing an outage | [Runbook](/docs/islandora/operations/runbook/) and the [Incident log](/docs/islandora/operations/incident-log/) |
 | Working on an exhibit | [Exhibits](/docs/islandora/exhibits/) |

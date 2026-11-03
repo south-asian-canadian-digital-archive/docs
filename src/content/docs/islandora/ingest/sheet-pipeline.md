@@ -1,6 +1,7 @@
 ---
 title: Spreadsheet pipeline
 description: Ingesting a collection catalogued in an archivist spreadsheet rather than CollectiveAccess.
+tags: [rust, python]
 sidebar:
   order: 2
 ---

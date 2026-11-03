@@ -1,6 +1,7 @@
 ---
 title: Authorities and place lookup
 description: Linking subject terms to LCSH/TGM, and the Getty TGN / CGNDB place lookup tool.
+tags: [drupal, php]
 sidebar:
   order: 5
 ---

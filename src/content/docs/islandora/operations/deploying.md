@@ -1,6 +1,7 @@
 ---
 title: Deploying
 description: 'Push to main goes live: the deploy path, its surprises, staging, and rollback.'
+tags: [github-actions, docker, make]
 sidebar:
   order: 1
 ---

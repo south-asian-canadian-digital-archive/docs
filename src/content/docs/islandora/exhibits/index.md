@@ -1,6 +1,7 @@
 ---
 title: Exhibits
 description: SACDA's digital exhibits, how they are hosted, and where each one came from.
+tags: [svelte, sveltekit, tailwind]
 sidebar:
   order: 0
   label: Overview

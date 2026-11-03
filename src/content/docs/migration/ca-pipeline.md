@@ -1,6 +1,7 @@
 ---
 title: CollectiveAccess pipeline
 description: How CollectiveAccess collections were migrated, and how to ingest another one.
+tags: [python]
 sidebar:
   order: 2
 ---

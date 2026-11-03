@@ -1,6 +1,7 @@
 ---
 title: "Canadian Sikh Heritage"
 description: "canadiansikhheritage.ca: what it is, how it's built, and what still needs documenting."
+tags: [wordpress]
 sidebar:
   order: 0
   label: Overview

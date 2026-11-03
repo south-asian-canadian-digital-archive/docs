@@ -1,0 +1,21 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { pagesByTag, tagLabel, TAGS } from '../../tags';
+
+export async function getStaticPaths() {
+  const map = await pagesByTag();
+  return [...map.keys()].map((tag) => ({ params: { tag } }));
+}
+
+const { tag } = Astro.params;
+const pages = (await pagesByTag()).get(tag) ?? [];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<StarlightPage frontmatter={{ title: `Tagged: ${tagLabel(tag)}`, description: TAGS[tag]?.about }}>
+  <p>{TAGS[tag]?.about} · <a href={`${base}/tags/`}>All tags</a></p>
+  <CardGrid>
+    {pages.map((p) => <LinkCard title={p.title} description={p.description} href={p.href} />)}
+  </CardGrid>
+</StarlightPage>

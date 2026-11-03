@@ -1,6 +1,7 @@
 ---
 title: Theme guide
 description: 'Working on the sacda theme: stack, layout, common tasks, shipping, and gotchas.'
+tags: [drupal, twig, php, typescript, tailwind, bun]
 sidebar:
   order: 2
 ---
@@ -122,6 +123,15 @@ Brand tokens live in `main.css` `:root`: primary orange `#f99d2a`, dark grey `#4
 The theme settings page also has colour fields (`includes/colors.inc`).
 
 ## Shipping a theme change
+
+```mermaid
+flowchart LR
+  edit[Edit src/css, src/js, templates] --> dev[bun run dev<br/>watch + livereload]
+  dev --> commit[Commit in isle-theme<br/>incl. sacda.libraries.yml, bun.lock]
+  commit --> bump[Bump the submodule in isle<br/>no ci: / chore: prefix]
+  bump --> ci[CI: bun install --frozen-lockfile<br/>bun run build into dist/]
+  ci --> img[Baked into the drupal image] --> live[Deployed; check dist/ in the container]
+```
 
 1. Commit and push in `isle-theme`. `dev` → `main` if you use the branch; `dev` and `main` are currently equal.
 2. In `isle`, bump the submodule pointer and push to `main`:

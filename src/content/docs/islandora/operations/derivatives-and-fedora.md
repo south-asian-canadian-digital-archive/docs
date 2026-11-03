@@ -1,6 +1,7 @@
 ---
 title: Derivatives and Fedora
 description: How thumbnails, service files, OCR and Fedora sync work, and the rules that keep them working.
+tags: [fedora, islandora, java]
 sidebar:
   order: 9
 ---

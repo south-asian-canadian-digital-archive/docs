@@ -1,6 +1,7 @@
 ---
 title: Workbench gotchas
 description: Islandora Workbench behaviours that silently lose or duplicate data, and what to do instead.
+tags: [python]
 sidebar:
   order: 1
 ---

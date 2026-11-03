@@ -1,6 +1,7 @@
 ---
 title: Traefik and rate limits
 description: Routers, priorities and the rate limits that keep crawlers from taking the site down.
+tags: [traefik, networking, security]
 sidebar:
   order: 7
 ---

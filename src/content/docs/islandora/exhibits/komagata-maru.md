@@ -1,6 +1,7 @@
 ---
 title: "Komagata Maru: Continuing the Journey"
 description: "The Komagata Maru exhibit at /exhibits/km: history, structure and how it is built."
+tags: [php]
 sidebar:
   order: 1
 ---

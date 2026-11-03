@@ -1,6 +1,7 @@
 ---
 title: About these docs
 description: How this site is organised and how to contribute.
+tags: [astro, bun]
 sidebar:
   order: 0
   label: Contributing

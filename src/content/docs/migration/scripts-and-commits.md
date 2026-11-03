@@ -1,6 +1,7 @@
 ---
 title: Scripts and commits
 description: The migration's scripts, one-off repairs, branches and key commits, with links to GitHub.
+tags: [python]
 sidebar:
   order: 3
 ---

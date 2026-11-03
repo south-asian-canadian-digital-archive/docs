@@ -3,14 +3,22 @@
 // title line. PageTitle is the only override that sits inside the content
 // column above the prose, which is where this control belongs.
 import MarkdownActions from './MarkdownActions.astro';
+import { tagLabel } from '../tags';
 
 const { title } = Astro.locals.starlightRoute.entry.data;
+const tags: string[] = (Astro.locals.starlightRoute.entry.data as { tags?: string[] }).tags ?? [];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <div class="doc-title-row">
   <h1 id="_top">{title}</h1>
   <MarkdownActions />
 </div>
+{tags.length > 0 && (
+  <ul class="doc-tags" aria-label="Tags">
+    {tags.map((t) => <li><a class="doc-tag" href={`${base}/tags/${t}/`}>{tagLabel(t)}</a></li>)}
+  </ul>
+)}
 
 <style>
   .doc-title-row {
@@ -30,6 +38,16 @@ const { title } = Astro.locals.starlightRoute.entry.data;
     margin: 0;
     text-wrap: balance;
   }
+
+  .doc-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    padding: 0;
+    margin: 0.75rem 0 0;
+  }
+  .doc-tags li { margin: 0; }
 
   /* The control drops under the title before it would squeeze it. */
   @media (max-width: 30rem) {

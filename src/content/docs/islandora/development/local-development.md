@@ -1,6 +1,7 @@
 ---
 title: Local development
 description: Run the stack on your machine, the dev override, config sync discipline, Composer, and the DEV instance.
+tags: [docker, make]
 sidebar:
   order: 1
 ---

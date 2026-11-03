@@ -1,6 +1,7 @@
 ---
 title: Ingest audit
 description: Check a collection's source spreadsheet against what the repository actually holds, row by row and field by field.
+tags: [svelte, drupal]
 sidebar:
   order: 3
 ---

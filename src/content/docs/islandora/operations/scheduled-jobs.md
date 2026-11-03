@@ -1,6 +1,7 @@
 ---
 title: Scheduled jobs
 description: 'Host cron and Drupal cron: what runs, when, and why.'
+tags: [docker, make]
 sidebar:
   order: 4
 ---

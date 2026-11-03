@@ -1,6 +1,7 @@
 ---
 title: "Legal history exhibit"
 description: "The South Asian Canadian legal history exhibit at /exhibits/legal-history."
+tags: [svelte, sveltekit, tailwind]
 sidebar:
   order: 4
 ---

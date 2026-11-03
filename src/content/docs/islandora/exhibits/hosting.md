@@ -1,6 +1,7 @@
 ---
 title: Exhibit hosting
 description: The six static exhibit sites, how they are routed and built, and the /static drop folder.
+tags: [nginx, sveltekit, php]
 sidebar:
   order: 0.5
 ---

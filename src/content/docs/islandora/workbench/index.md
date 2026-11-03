@@ -1,6 +1,7 @@
 ---
 title: Workbench
 description: How SACDA uses Islandora Workbench, where its configs live, and where to read the upstream docs.
+tags: [python]
 sidebar:
   order: 0
   label: Overview

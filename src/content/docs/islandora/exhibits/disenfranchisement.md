@@ -1,6 +1,7 @@
 ---
 title: "Disenfranchisement 1907–1947"
 description: "The Disenfranchisement exhibit at /exhibits/disenfranchisement."
+tags: [php]
 sidebar:
   order: 2
 ---
