@@ -1,21 +1,25 @@
 ---
 // "Copy page" split button with a dropdown of the other ways to get this page
-// into a tool: raw markdown or an assistant.
+// into a tool: raw Markdown, an assistant, or the whole site as llms.txt.
 //
-// Every docs URL already serves its own source at `.md` (starlight-md-txt) and
-// this control surfaces that.
+// Every docs URL already serves its own source at `.md` (starlight-md-txt), and
+// starlight-llms-txt writes llms.txt / llms-full.txt, so this control only
+// surfaces what the static build already exposes. (The qrate original also
+// offered an MCP server; that needs a server runtime, and this site is static.)
 //
 // A native <details> is the whole dropdown: no framework, no popover library,
-// and the links still work with JavaScript off. Only the two clipboard actions
-// need JS, and they stay hidden until the script attaches.
+// and the links still work with JavaScript off. Only the clipboard actions need
+// JS, and they stay hidden until the script attaches.
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '');
 const md = path === base ? `${base}/index.md` : `${path}.md`;
 const abs = new URL(md, Astro.site).href;
+const llms = new URL(`${base}/llms-full.txt`, Astro.site).href;
 
 const prompt = `Read ${abs} and help me with questions about it.`;
 ---
+
 
 <div class="doc-actions">
   <button type="button" class="doc-primary" data-copy={md} hidden>
@@ -66,6 +70,25 @@ const prompt = `Read ${abs} and help me with questions about it.`;
         <span>Open in Claude</span>
         <i aria-hidden="true">↗</i>
       </a>
+
+      <hr />
+
+      <button type="button" data-copy-text={llms} hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"
+          ><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"></path><path
+            d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"
+          ></path></svg
+        >
+        <span>Copy llms-full.txt URL</span>
+      </button>
+
+      <a href={`${base}/reference/ai-tools/`}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"
+          ><path d="M12 2.5 20.5 7v10L12 21.5 3.5 17V7Z"></path><path d="M3.5 7 12 11.5 20.5 7M12 11.5v10"
+          ></path></svg
+        >
+        <span>Using these docs with AI tools</span>
+      </a>
     </div>
   </details>
 </div>
@@ -99,6 +122,18 @@ const prompt = `Read ${abs} and help me with questions about it.`;
       });
     }
 
+    // Copies a literal string, the llms-full.txt URL.
+    for (const btn of document.querySelectorAll<HTMLButtonElement>('.doc-actions [data-copy-text]')) {
+      btn.hidden = false;
+      btn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(btn.dataset.copyText!);
+          flash(btn, 'Copied');
+        } catch {
+          flash(btn, 'Copy failed');
+        }
+      });
+    }
   }
 
   // Click-away and Escape, which <details> does not give you for free.
@@ -202,6 +237,12 @@ const prompt = `Read ${abs} and help me with questions about it.`;
     font-style: normal;
     font-size: 0.7em;
     color: var(--sl-color-gray-3);
+  }
+
+  .doc-menu hr {
+    border: 0;
+    border-top: 1px solid var(--sl-color-hairline-light);
+    margin: 5px 0;
   }
 
   svg {

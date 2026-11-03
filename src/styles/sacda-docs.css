@@ -1,0 +1,160 @@
+/* Starlight in a neutral SACDA house style, ported from the qrate docs layer.
+   Squared corners, hairline rules, no shadows, mono uppercase labels.
+   Change the tokens in the first three blocks to rebrand; nothing below them
+   uses a literal colour. */
+
+:root {
+  --sl-font: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --sl-font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --sl-content-width: 46rem;
+  --sl-sidebar-width: 17rem;
+  --sl-nav-height: 3.75rem;
+  --sl-radius-small: 0;
+  --sl-radius-medium: 0;
+  --sl-radius-large: 0;
+  --sl-shadow-sm: none;
+  --sl-shadow-md: none;
+  --sl-shadow-lg: none;
+
+  --logo-tile: #24292f;
+  --logo-mark: #f6f6f4;
+
+  --doc-tip: #3f6b57;
+  --doc-caution: #8a6d1f;
+  --doc-danger: #a3301f;
+}
+
+:root[data-theme='light'] {
+  --sl-color-bg: #fbfbfa;
+  --sl-color-bg-nav: #fbfbfa;
+  --sl-color-bg-sidebar: #fbfbfa;
+  --sl-color-bg-inline-code: rgb(24 26 29 / 0.06);
+  --sl-color-text: #3f444b;
+  --sl-color-white: #16181b; /* headings */
+  --sl-color-gray-1: #16181b;
+  --sl-color-gray-2: #3f444b;
+  --sl-color-gray-3: #6f757d;
+  --sl-color-hairline: rgb(24 26 29 / 0.15);
+  --sl-color-hairline-light: rgb(24 26 29 / 0.09);
+  --sl-color-hairline-shade: rgb(24 26 29 / 0.15);
+  --sl-color-accent: #2c5d8a;
+  --sl-color-accent-high: #1c3e5e;
+  --sl-color-accent-low: rgb(44 93 138 / 0.08);
+}
+
+:root[data-theme='dark'] {
+  --sl-color-bg: #16181b;
+  --sl-color-bg-nav: #16181b;
+  --sl-color-bg-sidebar: #16181b;
+  --sl-color-bg-inline-code: rgb(246 246 244 / 0.08);
+  --sl-color-text: rgb(236 237 238 / 0.72);
+  --sl-color-white: #f6f6f4;
+  --sl-color-gray-1: #ecedee;
+  --sl-color-gray-2: rgb(236 237 238 / 0.72);
+  --sl-color-gray-3: rgb(246 246 244 / 0.52);
+  --sl-color-hairline: rgb(246 246 244 / 0.14);
+  --sl-color-hairline-light: rgb(246 246 244 / 0.09);
+  --sl-color-hairline-shade: rgb(246 246 244 / 0.14);
+  --sl-color-accent: #8db6dc;
+  --sl-color-accent-high: #bcd5ec;
+  --sl-color-accent-low: rgb(141 182 220 / 0.1);
+
+  --logo-tile: #ecedee;
+  --logo-mark: #16181b;
+
+  --doc-tip: #8fb9a3;
+  --doc-caution: #d8bd78;
+  --doc-danger: #e08a7b;
+}
+
+/* --- squared, hairline house style ------------------------------------- */
+
+.content-panel + .content-panel {
+  border-top: 1px solid var(--sl-color-hairline);
+}
+
+.sl-markdown-content h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--sl-color-hairline);
+}
+
+.sl-markdown-content a:not(:where(.not-content *)) {
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 var(--sl-color-accent-high);
+}
+
+.sl-markdown-content table {
+  font-size: 0.9rem;
+}
+
+.starlight-aside {
+  border-inline-start-width: 2px;
+  border-radius: 0;
+}
+
+.starlight-aside__title {
+  font: 600 0.66rem/1 var(--sl-font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.starlight-aside--tip {
+  --sl-color-asides-text-accent: var(--doc-tip);
+  --sl-color-asides-border: var(--doc-tip);
+}
+
+.starlight-aside--caution {
+  --sl-color-asides-text-accent: var(--doc-caution);
+  --sl-color-asides-border: var(--doc-caution);
+}
+
+.starlight-aside--danger {
+  --sl-color-asides-text-accent: var(--doc-danger);
+  --sl-color-asides-border: var(--doc-danger);
+}
+
+.expressive-code .frame,
+.card,
+.sl-link-card {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+a.sl-link-card:hover {
+  background: var(--sl-color-accent-low);
+}
+
+kbd,
+.sl-badge {
+  border-radius: 0;
+  font-family: var(--sl-font-mono);
+}
+
+/* Mono uppercase labels: sidebar groups and "On this page". */
+.sidebar-content .group-label,
+.sidebar-content summary,
+starlight-toc h2,
+mobile-starlight-toc h2 {
+  font-family: var(--sl-font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sl-color-gray-3);
+}
+
+/* The current page: accent bar and wash, not a rounded pill. */
+.sidebar-content a[aria-current='page'],
+starlight-toc a[aria-current='true'] {
+  border-radius: 0;
+  color: var(--sl-color-white);
+  font-weight: 500;
+  background: var(--sl-color-accent-low);
+  box-shadow: inset 2px 0 0 var(--sl-color-accent);
+}
+
+site-search button,
+.sl-flex input,
+dialog {
+  border-radius: 0 !important;
+}
