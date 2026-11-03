@@ -39,6 +39,10 @@ These identifiers become authority links on Islandora's subject terms; see
 
 ## SACDA Thesaurus
 
+:::caution[TODO: Islandora steps]
+The thesaurus lookup still uses the team spreadsheet from the CollectiveAccess era. Replace it with the published thesaurus (Skosmos) or the term lookup page once they are live.
+:::
+
 SACDA's own headings, which add to or replace LCSH and TGM headings that are missing or
 not culturally appropriate.
 
@@ -61,6 +65,10 @@ Where the record was created, or the place it shows or discusses.
   either Abbotsford or Chilliwack, use "Fraser Valley". You should almost always manage a
   region at least.
 - Write simple places as `City, Province (abbr.)`.
+
+:::caution[TODO: Islandora steps]
+Rewrite the steps in this section around the Islandora Place lookup and the Workbench place column, and remove the CollectiveAccess Providence instructions.
+:::
 
 :::note[Changed since the manual]
 The manual says to copy a place identifier such as `surrey_bc` from CollectiveAccess

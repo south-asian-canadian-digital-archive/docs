@@ -42,10 +42,17 @@ digitized. RAD rule x.4.
 - Exact dates use ISO 8601: `YYYY-MM-DD`. Otherwise follow RAD.
 - **No square brackets around estimates**; mark them with Date Type instead. (This was a
   CollectiveAccess limit; Islandora stores dates as EDTF, e.g. `192X` or `1925/1930`.)
+:::caution[TODO: Islandora steps]
+  Swap the CollectiveAccess date rules for the Islandora ones: write dates as EDTF, and say how uncertain and approximate dates are entered.
+  :::
 - `n.d.` is a last resort. You should be able to give at least a century, usually a
   decade.
 
 ## Date Type
+
+:::caution[TODO: Islandora steps]
+These codes are CollectiveAccess back-end codes. Replace them with how date types are recorded for Islandora ingest (EDTF in `field_edtf_date` and any date-type field the Workbench templates use).
+:::
 
 Must match one of these codes exactly:
 

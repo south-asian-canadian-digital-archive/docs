@@ -17,6 +17,11 @@ the CollectiveAccess era. Where the archive has since changed (Islandora replace
 CollectiveAccess, and the place lookup replaced Providence place identifiers), the pages
 say so. More digitization guidance (scanning, file formats, storage) will be added here.
 
+
+:::caution[TODO: Islandora steps]
+The manual was written for CollectiveAccess. Pages below flag each CollectiveAccess-era step with a TODO like this one; swap them for the Islandora equivalents (Workbench sheet columns, Islandora field names, Place lookup, the published thesaurus).
+:::
+
 | Page | What |
 |---|---|
 | [Metadata fields](/docs/digitization/metadata-fields/) | Every core field: what it holds, the rules, and the standard behind it |
