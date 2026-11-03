@@ -1,7 +1,6 @@
 ---
 // The SACDA mark from the sacda Drupal theme (icon.svg): interlocking orange,
-// yellow and dark grey links. The dark paths lighten in dark mode so the mark
-// stays legible.
+// yellow and dark grey links. // keeps its original colours in both themes.
 const { size = 22 } = Astro.props;
 ---
 
@@ -31,11 +30,5 @@ const { size = 22 } = Astro.props;
   }
   .ink2 {
     fill: #484d56;
-  }
-  :global(:root[data-theme='dark']) .ink {
-    fill: #f2f2f2;
-  }
-  :global(:root[data-theme='dark']) .ink2 {
-    fill: #bfc3c9;
   }
 </style>
