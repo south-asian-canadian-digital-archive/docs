@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "scripts": { "dev": "astro dev", "build": "astro build", "preview": "astro preview" },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && cp dist/.md dist/index.md",
+    "preview": "astro preview"
+  },
   "dependencies": {
     "@astrojs/starlight": "^0.41.7",
     "astro": "^7.2.2",

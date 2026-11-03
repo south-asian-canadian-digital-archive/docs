@@ -40,13 +40,13 @@ export default defineConfig({
       editLink: { baseUrl: `${REPO}/edit/main/` },
       lastUpdated: true,
       sidebar: [
-        { label: 'Start here', autogenerate: { directory: 'start' } },
-        { label: 'Editing content', autogenerate: { directory: 'editors' } },
-        { label: 'Operations', autogenerate: { directory: 'operations' } },
-        { label: 'Development', autogenerate: { directory: 'development' } },
-        { label: 'Ingest', autogenerate: { directory: 'ingest' } },
-        { label: 'Research and roadmap', autogenerate: { directory: 'research' } },
-        { label: 'Reference', autogenerate: { directory: 'reference' } },
+        { label: 'Start here', items: [{ autogenerate: { directory: 'start' } }] },
+        { label: 'Editing content', items: [{ autogenerate: { directory: 'editors' } }] },
+        { label: 'Operations', items: [{ autogenerate: { directory: 'operations' } }] },
+        { label: 'Development', items: [{ autogenerate: { directory: 'development' } }] },
+        { label: 'Ingest', items: [{ autogenerate: { directory: 'ingest' } }] },
+        { label: 'Research and roadmap', items: [{ autogenerate: { directory: 'research' } }] },
+        { label: 'Reference', items: [{ autogenerate: { directory: 'reference' } }] },
       ],
       expressiveCode: {
         themes: [
