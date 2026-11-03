@@ -276,3 +276,17 @@ dialog {
 .hero .sl-link-button.minimal {
   color: var(--sl-color-accent);
 }
+
+/* Hovered topic: orange tile with a dark glyph, so the icon never vanishes
+   into the plugin's accent-coloured hover fill. */
+a:hover > .starlight-sidebar-topics-icon,
+a:focus-visible > .starlight-sidebar-topics-icon {
+  background: var(--sacda-orange) !important;
+  border-color: var(--sacda-orange) !important;
+  color: #1e1b1d !important;
+}
+a:hover > .starlight-sidebar-topics-icon svg,
+a:focus-visible > .starlight-sidebar-topics-icon svg {
+  color: #1e1b1d !important;
+  fill: currentColor;
+}
